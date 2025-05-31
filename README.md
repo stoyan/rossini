@@ -106,7 +106,7 @@ on(window, E.load, console.log);
 
 ## TypeScript support
 
-Although the code is pure 100% unadulturated vanilla JavaScript, if you like TS you should be good, thanks to the magic of `tsc` and declaration generation. There is a `[rossini.d.ts](dist/rossini.d.ts)` under `/dist`
+Although the code is pure 100% unadulturated vanilla JavaScript, if you like TS you should be good, thanks to the magic of `tsc` and declaration generation. There is a [`rossini.d.ts`](dist/rossini.d.ts) under `/dist`
 
 IDE autocomplete should be working too because of the JSDoc blocks present in the source.
 
