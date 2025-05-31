@@ -44,7 +44,7 @@ See `examples/tell.html` for more usage examples
 
 ## que(selector)
 
-Pronounced `ke` as in "what?" in Spanish is an alias for `document.querySelector`
+Pronounced `ke` as in "what?" in Spanish. It's an alias for `document.querySelector`
 
 ```
 const b = que('#mybutton');
