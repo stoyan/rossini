@@ -16,6 +16,14 @@ or
 <script src="../dist/rossini.umd.js"></script>
 ```
 
+or 
+
+```html
+<script src="https://unpkg.com/rossini@latest/dist/rossini.umd.js"></script>
+
+```
+
+
 ## Use
 
 ```js
