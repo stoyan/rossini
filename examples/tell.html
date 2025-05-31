@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Using Rossini</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="../dist/rossini.umd.js"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script>
+      const {el, on, que, E} = window.rossini;
+      const appDiv = que('#app');
+      const myHeading = el(
+        'h1',
+        null,
+        'Hello from my Rossini!',
+        el('br'),
+        el('small', null, 'All you see here is dynamically generated'),
+        el('hr'),
+      );
+      appDiv.append(myHeading);
+      appDiv.append(el('button', {id: 'myButton'}, "Click me, I'm a button"));
+      appDiv.append(
+        el(
+          'button',
+          {id: 'cleaner', style: 'margin-left: 10px'},
+          'Cripple my sibling button',
+        ),
+      );
+
+      let cleanListener = on('#myButton', E.click, (e, elem) => {
+        if (!que('#log')) {
+          appDiv.append(
+            el('pre', {
+              id: 'log',
+              class: 'meh',
+              style: 'padding: 20px; background: lightgrey',
+            }),
+          );
+        }
+        que('#log').textContent += `Button clicked: ${new Date()}\n`;
+      });
+
+      // call `cleanListener()` to remove the click event listener
+      on('#cleaner', 'click', (ev, element) => {
+        console.log(ev);
+        console.log(element);
+        if (cleanListener) {
+          // mem leaks and such
+          cleanListener();
+          cleanListener = null;
+        }
+        const log = que('#log');
+        if (log) {
+          log.textContent += `No more event listening: ${new Date()}\n`;
+        }
+      });
+
+      on(document, E.dcl, console.log);
+    </script>
+  </body>
+</html>
