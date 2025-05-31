@@ -1,4 +1,4 @@
-# Rossini
+# Rossini.js
 
 A minimal (less than 1K minified) DOM manipulation utility. 
 
@@ -22,7 +22,6 @@ or
 <script src="https://unpkg.com/rossini@latest/dist/rossini.umd.js"></script>
 
 ```
-
 
 ## Use
 
@@ -104,6 +103,12 @@ on('#myButton', E.click, console.log);
 on(document, E.dcl, console.log);
 on(window, E.load, console.log);
 ```
+
+## TypeScript support
+
+Although the code is pure 100% unadulturated vanilla JavaScript, if you like TS you should be good, thanks to the magic of `tsc` and declaration generation. There is a `[rossini.d.ts](dist/rossini.d.ts)` under `/dist`
+
+IDE autocomplete should be working too because of the JSDoc blocks present in the source.
 
 ## Why the name Rossini?
 
