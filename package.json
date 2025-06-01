@@ -1,6 +1,6 @@
 {
   "name": "rossini",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A micro JavaScript library for basic DOM manipulation.",
   "main": "dist/rossini.cjs.js",
   "module": "dist/rossini.esm.js",
